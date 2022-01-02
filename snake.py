@@ -71,8 +71,6 @@ class Snake:
         x_position = self.head.xcor()
         self.head.goto(x_position, 280)
 
-    def refresh(self):
-        self.head.goto(0, 0)
 
     def speed_up(self):
         self.speed *= 0.9
