@@ -27,7 +27,7 @@ while game_is_on:
     screen.update()
     snake.move()
 
-    
+    # Cause snake to reappear on the other side of screen when it reaches end of screen
 
     if snake.head.xcor() > 280:
         snake.reappear_x()
@@ -41,7 +41,7 @@ while game_is_on:
     if snake.head.ycor() < -280:
         snake.reappear_neg_y()
 
-
+    # Check the distance between food and snake
     
     if snake.head.distance(food) < 20:
         scoreboard.update_score()
@@ -49,6 +49,7 @@ while game_is_on:
         food.refresh()
         snake.speed_up()
 
+    # Check if snake collides with tail and end the game if it does
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
             scoreboard.game_over()
