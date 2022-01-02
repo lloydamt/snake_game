@@ -23,5 +23,11 @@ while game_is_on:
     screen.update()
     snake.move()
 
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280:
+        snake.reappear_x()
+
+    if snake.head.ycor() > 280 or snake.head.ycor() < -280:
+        snake.reappear_y()
+
 
 screen.exitonclick()

@@ -43,3 +43,15 @@ class Snake:
     def turn_right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+    def reappear_x(self):
+        x_position = self.head.xcor()
+        y_position = self.head.ycor()
+        new_x = x_position * -1
+        self.head.goto(new_x, y_position)
+
+    def reappear_y(self):
+        x_position = self.head.xcor()
+        y_position = self.head.ycor()
+        new_y = y_position * -1
+        self.head.goto(x_position, new_y)
